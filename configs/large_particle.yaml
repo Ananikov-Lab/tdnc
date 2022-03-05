@@ -1,0 +1,29 @@
+train_index:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+test_index:
+  - 0
+  - 1
+dset_path: data/large_particle_data
+augmentation_path: configs/augmentations/large_particle.py
+activation: sigmoid
+device: cuda
+bs:
+  train: 2
+  test: 2
+architecture: Unet
+encoder: resnet34
+output_path: models/large
+lr: 0.0001
+n_epochs: 500
+print_every: 50
+lr_reduce_epochs:
+  - 200
+  - 400
+lr_reduce_by: 10

@@ -1,0 +1,21 @@
+train_index:
+  - 0
+test_index:
+  - 1
+dset_path: data/small_particle_data/ngc
+augmentation_path: configs/augmentations/small_particle_ngc.py
+activation: sigmoid
+device: cuda
+bs:
+  train: 1
+  test: 1
+architecture: Unet
+encoder: vgg13
+output_path: models/NGC
+lr: 0.0001
+n_epochs: 500
+print_every: 50
+lr_reduce_epochs:
+  - 200
+  - 400
+lr_reduce_by: 10
